@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 2%;
+}
+
+h3 { 
+    text-transform: uppercase;
+}
+
+section {
+    margin-top: 10%;
+    background-color: mediumspringgreen;
+    font-size: 2em;
+    text-align: center;
+    color: #fff;
+    border-radius: 15px;
+}
