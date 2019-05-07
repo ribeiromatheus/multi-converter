@@ -13,7 +13,7 @@ function smallNum(num, mag) {
     if (a != 0) {
         s += units[a - 1] + " hundred";
         if (b == 0 && c == 0) return s;
-        else s += " and ";
+        //else s += " and ";
     }
     if (b == 0) {
         if (c == 0) return "";
@@ -63,7 +63,7 @@ function getNumber() {
     for (i = 0; i < max; i++) {
         temp = smallNum(s.substr(i * 3, 3));
         if (temp != "") {
-            if (max - i == 1 && r != "" && s.substr(i * 3, 3) < 100) r += " and ";
+            if (max - i == 1 && r != "" && s.substr(i * 3, 3) < 100) r += "  ";
             else if (r != "") r += ", ";
             if (max - i == 2) temp += " thousand";
             if (max - i > 2) temp += " " + illions[max - i - 3] + "illion";
