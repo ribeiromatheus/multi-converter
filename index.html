@@ -19,7 +19,7 @@
             <form name="frmNumber" method="post">
                     <div class="form-group">
                         <div class="col-md-12">
-                            <input id="txt_numero_por_extenso" class="form-control" name="num" type="text"
+                            <input id="txt_numero_por_extenso" class="form-control" name="num" type="number"
                                 placeholder="Digite o número que quer saber por extenso"
                                 onkeypress="return numbersOnlyInt(event)" maxlength="315">
                         </div>
@@ -28,9 +28,9 @@
                         <div class="col-md-12">
                             <input id="btn_numero_por_extenso" class="add-currency-btn" role="button" type="submit"
                             onclick="return getNumber();" value="POR EXTENSO"><br />
-                            <div id="output"></div>
                         </div>
                     </div>
+                    <div id="output"></div>
                 </form>
         </section>
     </div>
