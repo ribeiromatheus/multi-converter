@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>Números em Inglês por Extenso</title>
+    <title>Numbers to Words</title>
 </head>
+
 <body>
     <div class="container">
+        <header class="header">
+            <h1>Numbers to Words</h1>
+        </header>
         <section>
-            <h3 class="text-center">gerador de números por extenso em inglês</h3>
             <form name="frmNumber" method="post">
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <input id="txt_numero_por_extenso" class="form-control" name="num" type="text" placeholder="Digite o número que quer saber por extenso" onkeypress="return numbersOnlyInt(event)" maxlength="315">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="txt_numero_por_extenso" class="form-control" name="num" type="text"
+                                placeholder="Digite o número que quer saber por extenso"
+                                onkeypress="return numbersOnlyInt(event)" maxlength="315">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <input id="btn_numero_por_extenso" class="btn btn-success" role="button" type="submit" onclick="return getNumber();" value="POR EXTENSO"><br />
-                        <div id="output"></div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input id="btn_numero_por_extenso" class="add-currency-btn" role="button" type="submit"
+                            onclick="return getNumber();" value="POR EXTENSO"><br />
+                            <div id="output"></div>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
         </section>
     </div>
     <script src="js/script.js"></script>
 </body>
+
 </html>
