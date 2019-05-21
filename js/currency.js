@@ -289,7 +289,12 @@ currenciesList.addEventListener("focusout", currenciesListFocusOut);
 
 function currenciesListFocusOut(event) {
     const inputValue = event.target.value;
-    if (isNaN(inputValue) || Number(inputValue) === 0) event.target.value = "";
+    if (isNaN(inputValue) || Number(inputValue) === 0 || Number(inputValue) < 0) {
+        let inputs = document.querySelectorAll("input");
+        inputs.forEach(input => {
+            input.value = "";
+        });
+    }
     else event.target.value = Number(inputValue).toFixed(4);
 }
 
@@ -334,7 +339,7 @@ function newCurrenciesListItem(currency) {
         `<li class="currency ${currency.abbreviation === baseCurrency ? "base-currency" : ""}" id=${currency.abbreviation}>
       <img src=${currency.flagURL} class="flag">
       <div class="info">
-        <p class="input"><span class="currency-symbol">${currency.symbol}</span><input placeholder="0.0000" value=${inputValue}></p>
+        <p class="input"><span class="currency-symbol">${currency.symbol}</span><input type="number" placeholder="0.0000" value=${inputValue}></p>
         <p class="currency-name">${currency.abbreviation} - ${currency.name}</p>
         <p class="base-currency-rate">1 ${baseCurrency} = ${exchangeRate} ${currency.abbreviation}</p>
       </div>

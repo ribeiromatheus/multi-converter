@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Numbers to Words</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Multi Converter</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="numbers-to-words.html">Numbers to Words</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="currency-converter.html">Currency Converter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="date-converter.html">Date Converter</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header class="header">
+            <h1>Numbers to Words</h1>
+        </header>
+        <section>
+            <form name="frmNumber" method="post">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input id="txt_numero_por_extenso" class="form-control" name="num" type="number"
+                            placeholder="Digite o número que quer saber por extenso"
+                            onkeypress="return numbersOnlyInt(event)" maxlength="315">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input id="btn_numero_por_extenso" class="add-currency-btn" role="button" type="submit"
+                            onclick="return getNumber();" value="POR EXTENSO"><br />
+                    </div>
+                </div>
+                <div id="output"></div>
+            </form>
+        </section>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

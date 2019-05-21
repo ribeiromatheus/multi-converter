@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Numbers to Words</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Multi Converter</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="numbers-to-words.html">Numbers to Words</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="currency-converter.html">Currency Converter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="date-converter.html">Date Converter</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header class="header">
+            <h1>Date Converter</h1>
+        </header>
+        <section>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="date" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div id="output"></div>
+                    <div class="col-md-12">
+                        <input id="btn-date" class="add-currency-btn" role="button" type="submit"
+                            onclick="return getNumber();" value="CONVERTER"><br />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        function today(data) {
+            let dia = ('0' + data.getDate()).slice(-2),
+                mes = ('0' + (data.getMonth() + 1)).slice(-2);
+            return data.getFullYear() + "-" + mes + "-" + dia;
+        };
+        function generate() {
+            const input = document.querySelector("input").value.split('-');
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            let month;
+            for (let i in months) {
+                if (input[1].slice(1) == i) month = months[i - 1];
+            }
+            document.querySelector("#output").innerHTML = month + " " + input[2] + " " + input[0];
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            let hoje = new Date();
+            document.querySelector("input").value = today(hoje);
+        })
+
+        document.querySelector("input").addEventListener("change", generate);
+
+        document.querySelector("#btn-date").addEventListener("click", generate);
+    </script>
+</body>
+
+</html>

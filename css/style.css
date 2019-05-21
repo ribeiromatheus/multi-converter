@@ -8,12 +8,6 @@ body {
     padding-top: 2%;
 }
 
-h3 { 
-    text-transform: uppercase;
-}
-/* form {
-  margin-top: 150px;
-} */
 section {
     text-align: center;
     color: #fff;
@@ -153,6 +147,7 @@ ul.add-currency-list li span {
 
 .add-currency-btn {
   background-color: #00b386;
+  border-radius: 4px;
   color: #fff;
   padding: 1rem;
   font-size: 1.2rem;
