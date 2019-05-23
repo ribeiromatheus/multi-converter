@@ -13,7 +13,7 @@ function smallNum(num, mag) {
     if (a != 0) {
         s += units[a - 1] + " hundred";
         if (b == 0 && c == 0) return s;
-        else s += "  ";
+        else s += " and ";
     }
     if (b == 0) {
         if (c == 0) return "";
