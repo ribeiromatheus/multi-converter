@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +15,6 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Numbers to Words</title>
 </head>
-
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <a class="navbar-brand" href="#">Multi Converter</a>
@@ -54,44 +52,12 @@
                 <div class="col-md-12">
                     <div id="output"></div>
                     <div class="col-md-12">
-                        <input id="btn-date" class="add-currency-btn" role="button" type="submit"
-                        value="CONVERT"><br />
+                        <input id="btn-date" class="add-currency-btn" role="button" type="submit" value="CONVERT"><br />
                     </div>
                 </div>
             </div>
         </section>
     </div>
-    <script>
-        function today(data) {
-            let dia = ('0' + data.getDate()).slice(-2),
-                mes = ('0' + (data.getMonth() + 1)).slice(-2);
-            return data.getFullYear() + "-" + mes + "-" + dia;
-        };
-        function generate() {
-            const input = document.querySelector("input").value.split('-');
-            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            let month, ordinalSymbol;
-            for (let i in months) {
-                if (input[1].slice(1) == i) month = months[i - 1];
-            }
-            if (input[2] <= 3 || input[2] > 20) {
-                if (input[2].substring(input[2].length-1) == 1) ordinalSymbol = 'st'
-                else if (input[2].substring(input[2].length-1) == 2) ordinalSymbol = 'nd'
-                else ordinalSymbol = 'rd'
-            } else ordinalSymbol = 'th'
-
-            document.querySelector("#output").innerText = month + " " + parseInt(input[2]) + ordinalSymbol + ", " + input[0];
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            let hoje = new Date();
-            document.querySelector("input").value = today(hoje);
-        })
-
-        document.querySelector("input").addEventListener("change", generate);
-
-        document.querySelector("#btn-date").addEventListener("click", generate);
-    </script>
+    <script src="js/date.js"></script>
 </body>
-
 </html>
