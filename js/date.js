@@ -15,7 +15,8 @@ function generate() {
     if (input[2] <= 3 || input[2] > 20) {
         if (input[2].substring(input[2].length - 1) == 1) ordinalSymbol = "st";
         else if (input[2].substring(input[2].length - 1) == 2) ordinalSymbol = "nd";
-        else ordinalSymbol = "rd";
+        else if (input[2].substring(input[2].length - 1) == 3) ordinalSymbol = "rd";
+        else ordinalSymbol = 'th';
     } else ordinalSymbol = 'th';
 
     document.querySelector("#output").innerHTML = `${month} ${parseInt(input[2]) + "<sup>" + ordinalSymbol + "</sup>, "} ${input[0]} `;
