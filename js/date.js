@@ -2,10 +2,11 @@ function today(date) {
     let day = ("0" + date.getDate()).slice(-2),
         month = ("0" + (date.getMonth() + 1)).slice(-2);
     return date.getFullYear() + "-" + month + "-" + day;
-};
+}
+
 function generate() {
-    const input = document.querySelector("input").value.split("-");
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const input = document.querySelector("input").value.split("-"),
+        months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let month, ordinalSymbol;
 
     for (let i = 1; i <= months.length; i++) {
@@ -15,7 +16,8 @@ function generate() {
     if (input[2] <= 3 || input[2] > 20) {
         if (input[2].substring(input[2].length - 1) == 1) ordinalSymbol = "st";
         else if (input[2].substring(input[2].length - 1) == 2) ordinalSymbol = "nd";
-        else ordinalSymbol = "rd";
+        else if (input[2].substring(input[2].length - 1) == 3) ordinalSymbol = "rd";
+        else ordinalSymbol = 'th';
     } else ordinalSymbol = 'th';
 
     document.querySelector("#output").innerHTML = `${month} ${parseInt(input[2]) + "<sup>" + ordinalSymbol + "</sup>, "} ${input[0]} `;

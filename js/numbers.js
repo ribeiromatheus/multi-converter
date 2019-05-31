@@ -1,5 +1,5 @@
 //<!-- Begin
-var units = new Array("one", "two", "three", "four", "five", "six", "seven", "eight", "nine"),
+const units = new Array("one", "two", "three", "four", "five", "six", "seven", "eight", "nine"),
     teens = new Array("ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen ", "nineteen"),
     tens = new Array("twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"),
     illions = new Array('m', 'b', 'tr', 'quadr', 'quint', 'sext', 'sept', 'oct', 'non', 'dec', 'undec', 'duodec', 'tredec', 'quattuordec', 'quindec', 'sexdec', 'septendec', 'octodec', 'novemdec', 'vigint', 'unvigint', 'duovigint', 'trevigint', 'quattuorvigint', 'quinvigint', 'sexvigint', 'septenvigint', 'octovigint', 'novemvigint', 'trigint', 'untrigint', 'duotrigint', 'tretrigint', 'quattuortrigint', 'quintrigint', 'sextrigint', 'septentrigint', 'octotrigint', 'novemtrigint', 'quadragint', 'unquadragint', 'duoquadragint', 'trequadragint', 'quattuorquadragint', 'quinquadragint', 'sexquadragint', 'septenquadragint', 'octoquadragint', 'novemquadragint', 'quinquagint', 'unquinquagint', 'duoquinquagint', 'trequinquagint', 'quattuorquinquagint', 'quinquinquagint', 'sexquinquagint', 'septenquinquagint', 'octoquinquagint', 'novemquinquagint', 'sexagint', 'unsexagint', 'duosexagint', 'tresexagint', 'quattuorsexagint', 'quinsexagint', 'sexsexagint', 'septsexagint', 'octosexagint', 'novemsexagint', 'septuagint', 'unseptuagint', 'duoseptuagint', 'treseptuagint', 'quattuorseptuagint', 'quinseptuagint', 'sexseptuagint', 'septseptuagint', 'octoseptuagint', 'novemseptuagint', 'octogint', 'unoctogint', 'duooctogint', 'treoctogint', 'quattuoroctogint', 'quinoctogint', 'sexoctogint', 'septoctogint', 'octooctogint', 'novemoctogint', 'nonagint', 'unnonagint', 'duononagint', 'trenonagint', 'duattuornonagint', 'quinnonagint', 'sexnonagint', 'septnonagint', 'octononagint', 'novemnonagint', 'cent', 'cenunt', 'duocent', 'centret');
@@ -30,14 +30,13 @@ function smallNum(num, mag) {
 }
 
 function fixChars() {
-    let subject = document.forms.frmNumber.num,
+    let subject = document.querySelector(".num"),
         str = subject.value,
         str2 = "",
         L = str.length,
         t,
         f = false,
         i;
-
     for (i = 0; i < L; i++) {
         t = str.charAt(i);
         if (t * 1 == t) {
@@ -57,9 +56,10 @@ function getNumber() {
         return false;
     }
     let r = "", temp = "";
+
     while (s.length % 3 > 0) s = "0" + s;
-    let max = Math.ceil(s.length / 3);
-    let i;
+
+    let max = Math.ceil(s.length / 3), i;
     for (i = 0; i < max; i++) {
         temp = smallNum(s.substr(i * 3, 3));
         if (temp != "") {
@@ -72,7 +72,7 @@ function getNumber() {
     }
     if (s == 0) r = "zero";
     r = r.charAt(0).toUpperCase() + r.substring(1, r.length) + ".";
-    document.getElementById("output").innerHTML = r;
+    document.querySelector("#output").innerText = r;
     return false;
 }
 // End -->
